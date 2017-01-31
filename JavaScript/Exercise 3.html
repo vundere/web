@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function gcd(a,b) {
+        if (b == 0) {
+          return a;
+        }
+        else {
+          return gcd(b,a%b);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var one = 0;
+      var two = 0;
+      while (one <= 0) {
+        var one = prompt("enter first number");
+      }
+      while (two <= 0) {
+        var two = prompt("enter second number");
+      }
+      document.write("The greatest common divisor of " +one +" and " +two +" is " +gcd(one,two));
+    </script>
+  </body>
+</html>

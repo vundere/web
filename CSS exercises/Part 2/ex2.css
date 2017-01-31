@@ -1,0 +1,28 @@
+        body {
+          background-color: #f0f8ff
+        }
+        div {
+          width: 75%;
+          min-width: 500px;
+          border: 1px solid;
+          border-color: #333333;
+          background-color: white;
+          margin: 1em;
+        }
+        span {
+          font-weight: bold;
+          padding-right: 0.5em;
+          padding-left: 0.5em;
+        }
+        #alert {
+            border: 1px dashed red;
+        }
+        .redtext {
+            color: red;
+        }
+        .ipsum {
+            background-color: #fdfd96;
+        }
+        .quis {
+            background-color: #fdca96;
+        }
