@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #img {
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+    <script type="text/javascript">
+    function init() {
+      var div = document.getElementsById('image');
+    }
+    function changeImage() {
+      var s = document.getElementById('selector');
+      div.style.backgroundImage = "url(noPicture.png)";
+      img.src = "/" +s.options[s.selectedIndex].value
+      alert s.options[s.selectedIndex].text + " " + s.options[s.selectedIndex].value;
+    }
+    window.onload = init;
+    </script>
+  </head>
+  <body>
+    <form class="" name="form" action="index.html" method="post" onchange="changeImage">
+      <select id="selector" name="country">
+        <option value="noPicture.png">None</option>
+        <option value="flagSE.png">Sweden</option>
+        <option value="flagNO.png">Norway</option>
+      </select>
+    </form>
+
+    <img id="img" src="noPicture.png" alt="">
+  </body>
+</html>
