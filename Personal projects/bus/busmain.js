@@ -1,8 +1,20 @@
 var timeNow;
-var startLeaveX = moment('06:13', "HH:mm");
-var startLeave6 = moment('06:11', "HH:mm");
+var startLeaveX = moment('06:13', "HH:mm"); //random X60 timestamp
+// 13, 43
+var startLeave6 = moment('06:11', "HH:mm"); //random 6 timestamp
+// 11, 26, 41, 56
 var instanceX;
 var instance6;
+var x60times = [13,43];
+var sixTimes = [11,26,41,56];
+
+//fox' stuff?
+function get_minutes_to_bus(bus_times) {
+  var currentMin = moment().minutes();
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
+}
 
 $(document).ready(function() {
   $('.innerR').mouseover(function(){
@@ -29,10 +41,11 @@ $(document).ready(function() {
     if (timeNow.hours() > instanceX.hours()) {
       instanceX.add(1, 'hours');
     };
-    if (timeNow.minutes() > 13 && timeNow.minutes() < 43 && instanceX.minutes() > 11) {
+    if (timeNow.minutes() > 13 && timeNow.minutes() < 43 && instanceX.minutes() > 11 && instanceX.minutes() !== 43) {
       instanceX.add(ttime, 'minutes');
-    } else if (timeNow.minutes() > 43 && instanceX.minutes() < 43) {
+    } else if (timeNow.minutes() > 43 && instanceX.minutes() < 43 && instanceX.minutes() !== 13) {
       instanceX.add(ttime, 'minutes');
+      instanceX.add(1, 'hours');
     }
     $('#two').html("X60: " +instanceX.format('HH:mm'));
   }, 100);
@@ -43,12 +56,16 @@ $(document).ready(function() {
     if (timeNow.hours() > instance6.hours()) {
       instance6.add(1, 'hours');
     };
-    if (42 > timeNow.minutes() > 11 && instance6.minutes() !== 41) {
+    if (26 > timeNow.minutes() > 11 && timeNow.minutes() < 26 && instance6.minutes() !== 26) {
       instance6.add(ttime, 'minutes');
-    } else if (timeNow.minutes() < 11 && instance6.minutes() !== 11) {
+    } else if (timeNow.minutes() > 26 && timeNow.minutes() < 41 && instance6.minutes() !== 41) {
       instance6.add(ttime, 'minutes');
+    } else if (timeNow.minutes() > 41 && timeNow.minutes() < 56 && instance6.minutes() !== 56) {
+      instance6.add(ttime, 'minutes');
+    } else if (timeNow.minutes() > 56 && instance6.minutes() !== 11) {
+      instance6.add(ttime, 'minutes');
+      instance6.add(1, 'hours');
     };
-
     $('#four').html("6: " +instance6.format('HH:mm'));
   }, 100);
 
